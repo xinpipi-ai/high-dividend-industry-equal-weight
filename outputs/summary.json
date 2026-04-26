@@ -1,0 +1,22 @@
+{
+  "start_date": "20190101",
+  "end_date": "20260424",
+  "benchmark": "000300.SH",
+  "months": 87,
+  "total_return": 3.6112211600387694,
+  "benchmark_total_return": 0.5241666936910967,
+  "annualized_return": 0.23469821694280357,
+  "benchmark_annualized_return": 0.05985354684000632,
+  "max_drawdown": -0.17023659207791886,
+  "benchmark_max_drawdown": -0.40619314625900294,
+  "monthly_win_rate": 0.5862068965517241,
+  "excess_win_rate": 0.5517241379310345,
+  "monthly_vol": 0.24912246633992702,
+  "sharpe_zero_rf": 0.9690039174241689,
+  "avg_holding_count": 10.0,
+  "notes": [
+    "Uses Tushare daily_basic.dv_ttm as dividend-yield proxy.",
+    "Uses current SW2021 L1 membership from Tushare; this can introduce survivorship/mapping bias.",
+    "Ignores transaction costs, slippage, suspensions and intraday limit-up/limit-down execution constraints."
+  ]
+}
