@@ -74,9 +74,31 @@ Generated raw/cache data is stored under `data/`, and detailed outputs are store
 | File | Purpose |
 |---|---|
 | `backtest_tushare.py` | Main Tushare data fetcher and monthly backtest engine |
+| `deepseek_review.py` | Optional DeepSeek-powered strategy review generator |
 | `requirements.txt` | Python dependencies |
 | `.env.example` | Local token template without any real credential |
 | `outputs/summary.json` | Public, aggregate backtest summary |
+
+## DeepSeek Review
+
+This project can optionally use DeepSeek's OpenAI-compatible API to generate a concise strategy review from `outputs/summary.json`.
+
+Add your local API key to `.env`:
+
+```bash
+DEEPSEEK_API_KEY=your_deepseek_api_key_here
+DEEPSEEK_MODEL=deepseek-chat
+```
+
+Then run:
+
+```bash
+python deepseek_review.py
+```
+
+The generated review is written to `outputs/deepseek_review.md`, which is ignored by Git by default.
+
+If DeepSeek changes the public model name, set `DEEPSEEK_MODEL` in `.env` or pass `--model` on the command line.
 
 ## Important Notes
 
@@ -88,4 +110,3 @@ Current limitations:
 - The industry mapping uses current Tushare SW2021 membership, so historical industry membership bias may exist.
 - The backtest does not yet model suspensions, limit-up/limit-down execution failure, slippage, taxes, or full turnover-based transaction costs.
 - Raw Tushare data and local credentials are intentionally excluded from the repository.
-
