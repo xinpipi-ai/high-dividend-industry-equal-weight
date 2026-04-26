@@ -74,10 +74,33 @@ Generated raw/cache data is stored under `data/`, and detailed outputs are store
 | File | Purpose |
 |---|---|
 | `backtest_tushare.py` | Main Tushare data fetcher and monthly backtest engine |
+| `current_picks.py` | Generate latest monthly strategy picks as CSV and Markdown |
 | `deepseek_review.py` | Optional DeepSeek-powered strategy review generator |
 | `requirements.txt` | Python dependencies |
 | `.env.example` | Local token template without any real credential |
 | `outputs/summary.json` | Public, aggregate backtest summary |
+
+## Monthly Picks
+
+Run this once per month to generate the strategy's latest 10-stock list:
+
+```bash
+cd "/Users/xinwei/Desktop/my show/high-dividend-industry-equal-weight"
+python3 current_picks.py
+open outputs/current_picks.md
+```
+
+The command writes:
+
+- `outputs/current_picks.csv`
+- `outputs/current_picks.md`
+
+To reproduce a specific month or date, pass an end date. The script will use the latest open trading day on or before that date:
+
+```bash
+python3 current_picks.py --end-date 20260424
+open outputs/current_picks.md
+```
 
 ## DeepSeek Review
 

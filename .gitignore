@@ -15,4 +15,4 @@ data/
 # Keep generated backtest result files local by default.
 outputs/*
 !outputs/summary.json
-
+!outputs/current_picks.example.md
